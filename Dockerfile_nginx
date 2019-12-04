@@ -1,0 +1,3 @@
+FROM nginx
+
+COPY wait-for-it.sh nginx_config.sh /
