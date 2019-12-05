@@ -50,7 +50,7 @@ services:
     volumes:
      - ./etc/nginx/sample.docker.template:/etc/nginx/conf.d/sample.docker.template
     ports:
-     - "8090:80"
+     - "80:80"
     environment:
      - NGINX_PORT=80
     command: ["/wait-for-it.sh", "-s", "-t", "0", "sample-api:5000", "--", "sh", "/nginx_config.sh"]
