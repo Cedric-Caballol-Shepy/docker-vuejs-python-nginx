@@ -3,7 +3,10 @@ from flask import jsonify
 from flask import request
 import urllib.request
 import json
+import threading
 
+threadLock = threading.Lock()
+UNIQUE_GAME_ID = 0
 app = Flask(__name__)
 
 
@@ -28,6 +31,17 @@ def get_message():
     params = {"sender": user_id, "message": message}
     result = jsonify(http_json_request(params, bot_url))
     return result
+
+
+@app.route('/api/get_id', methods=['GET'])
+def get_id():
+    """
+    Returns an id that's ensured to be unique
+    """
+    global UNIQUE_GAME_ID
+    with threadLock:
+        UNIQUE_GAME_ID += 1
+    return jsonify(UNIQUE_GAME_ID)
 
 
 def http_json_request(json_data, url, method="POST"):
