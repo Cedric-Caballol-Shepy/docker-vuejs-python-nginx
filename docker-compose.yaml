@@ -16,8 +16,7 @@ services:
       - '3306:3306'
     expose:
       - '3306'
-    networks:
-      - sample-net
+    network_mode: "host"
   sample-api:
     container_name: sample-api
     build: .
@@ -25,11 +24,10 @@ services:
       - FLASK_ENV=development
     volumes:
       - .:/opt
-    command: ["/wait-for-it.sh", "-s", "-t", "0", "sample-db:3306", "--", "sh", "/opt/sample/bootstrap.sh"]
-    networks:
-      - sample-net
+    command: ["/wait-for-it.sh", "-s", "-t", "0", "localhost:3306", "--", "sh", "/opt/sample/bootstrap.sh"]
     depends_on:
       - sample-db
+    network_mode: "host"
   sample-ui:
     container_name: sample-ui
     build:
@@ -37,11 +35,10 @@ services:
       dockerfile: ./sample-ui/Dockerfile
     volumes:
       - .:/opt
-    command: ["/wait-for-it.sh", "-s", "-t", "0", "sample-api:5000", "--", "sh", "/opt/sample-ui/bootstrap.sh"]
-    networks:
-      - sample-net
+    command: ["/wait-for-it.sh", "-s", "-t", "0", "localhost:5000", "--", "sh", "/opt/sample-ui/bootstrap.sh"]
     depends_on:
       - sample-api
+    network_mode: "host"
   sample-web:
     container_name: sample-web
     build:
@@ -53,13 +50,10 @@ services:
      - "80:80"
     environment:
      - NGINX_PORT=80
-    command: ["/wait-for-it.sh", "-s", "-t", "0", "sample-api:5000", "--", "sh", "/nginx_config.sh"]
-    networks:
-      - sample-net
+    command: ["/wait-for-it.sh", "-s", "-t", "0", "localhost:5000", "--", "sh", "/nginx_config.sh"]
     depends_on:
       - sample-api
       - sample-ui
+    network_mode: "host"
 volumes:
   db_data:
-networks:
-  sample-net:
