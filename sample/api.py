@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 from flask import Flask
 from flask import jsonify
 from flask import request
@@ -23,14 +25,30 @@ def get_message():
     It returns the chatbot anwser in json format.
     """
     # get params from the POST request
-    user_id = request.form['user_id']
-    bot_id = request.form['bot_id']  # ex: 5005
-    message = request.form['message']
+    # try
+    print("zeeeeeeeeeeeeeee", request.data.decode())
+    with open("temp.txt", "w") as f:
+        f.write(request.data.decode())
+    user_id = request.json['user_id']
+    bot_id = request.json['bot_id']  # ex: 5005
+    message = request.json['message']
     # query the concerned bot
-    bot_url = "http://localhost:" + bot_id + "/webhooks/rest/webhook"
+    bot_url = "http://localhost:" + str(bot_id) + "/webhooks/rest/webhook"
     params = {"sender": user_id, "message": message}
-    result = jsonify(http_json_request(params, bot_url))
-    return result
+    result = http_json_request(params, bot_url)
+    new_msg = []
+    pile_run = deepcopy(result)
+    while len(pile_run) > 0:
+        msg = pile_run.pop(0)
+        if "buttons" in msg:
+            params["message"] = msg["buttons"][0]["payload"]
+            pile_run.extend(http_json_request(params, bot_url))
+        else:
+            new_msg.append(msg)
+    return jsonify(new_msg)
+    # except Exception as err:
+    #     print("Erreur dans get_message() :", err)
+    #     return "Error"
 
 
 @app.route('/api/get_id', methods=['GET'])
@@ -41,7 +59,7 @@ def get_id():
     global UNIQUE_GAME_ID
     with threadLock:
         UNIQUE_GAME_ID += 1
-    return jsonify(UNIQUE_GAME_ID)
+    return str(UNIQUE_GAME_ID)
 
 
 def http_json_request(json_data, url, method="POST"):
