@@ -31,17 +31,14 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
   <div class="container">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">Accueil</a>
+    <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/MLG_Logo.png" alt="mlg_logo" width="150px"></a>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#challenges">Défis</a>
+          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#challenges">Les défis</a>
         </li>
         <li class="nav-item mx-0 mx-lg-1">
           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">L'équipe</a>
-        </li>
-        <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Connection</a>
         </li>
       </ul>
     </div>
@@ -51,9 +48,6 @@
 <!-- Masthead -->
 <header class="masthead bg-primary text-white text-center">
   <div class="container d-flex align-items-center flex-column">
-
-    <!-- Masthead Avatar Image -->
-<!--    <img class="masthead-avatar mb-5" src="img/MLG_Logo.png" alt="">-->
 
     <!-- Masthead Heading -->
     <h1 class="masthead-heading text-uppercase mb-0">MLG</h1>
@@ -73,12 +67,32 @@
   </div>
 </header>
 
+
+
 <!-- Portfolio Section -->
 <section class="page-section portfolio" id="challenges">
   <div class="container">
 
+          <!-- Portfolio Section Heading -->
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Introduction</h2>
+
+    <!-- Icon Divider -->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon">
+        <i class="fa fa-star"></i>
+      </div>
+      <div class="divider-custom-line"></div>
+    </div>
+
+      <p style="text-align: center">
+        Bienvenue sur le site de la Major League Gaming qui a pour but de sensibiliser les étudiants aux démarches
+        qu'ils seront amenés à entreprendre tout au long de leur scolarité.
+      </p>
+      <br>
+
     <!-- Portfolio Section Heading -->
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Défis</h2>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Les défis</h2>
 
     <!-- Icon Divider -->
     <div class="divider-custom">
@@ -144,9 +158,38 @@
         </div>
       </div>
 
+          <div class="container">
+
+          <!-- Portfolio Section Heading -->
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Explications techniques</h2>
+
+    <!-- Icon Divider -->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon">
+        <i class="fa fa-star"></i>
+      </div>
+      <div class="divider-custom-line"></div>
+    </div>
+    <p>
+        Notre architecture se compose comme ceci :
+    </p>
+    <ul>
+      <li>Le jeu Unity est un client lourd qui sert d'interface pour communiquer avec les chatbots</li>
+      <li>Le serveur NGINX embarqué dans une image Docker sert de point d'entrée pour l'API écrite avec Flask</li>
+      <li>L'application Flask embarqué dans une image Docker sert à distribuer les requêtes vers les chatbots visés </li>
+      <li>Les chatbots entraînés grâce à la librairie open-source Rasa se chargent de répondre aux questions posées</li>
+    </ul>
+
+    <p style="text-align: center">
+        <img src="img/schema_fonctionnel.png"/>
+    </p>
+
+
     </div>
     <!-- /.row -->
 
+  </div>
   </div>
 </section>
 
@@ -181,20 +224,19 @@
       <div class="col-lg-3 mr-auto">
         <img class="img-fluid" src="img/Team/shepy.jpg" alt="">
         <p class="lead mate-name">Cédric Caballol</p>
-        <p class="lead mate-description">L'expert du backend et de docker, c'est lui!</p>
+        <p class="lead mate-description">L'expert du backend et de Docker, c'est lui !</p>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-3 mr-auto">
         <img class="img-fluid" src="img/Team/Vivien.jpg" alt="">
         <p class="lead mate-name">Vivien Donat-Bouillud</p>
-        <p class="lead mate-description">Lui, c'est plutöt la partie front-end du projet</p>
+        <p class="lead mate-description">Lui, c'est plutôt la partie front-end du projet</p>
       </div>
       <div class="col-lg-3 mr-auto">
         <img class="img-fluid" src="img/Team/Kelly.jpg" alt="">
         <p class="lead mate-name">Kelly Narboux</p>
-        <p class="lead mate-description">La seule fille de l'équipe, chef de la team gaming
-        </p>
+        <p class="lead mate-description">La seule fille de l'équipe, chef de la team gaming</p>
       </div>
       <div class="col-lg-3 mr-auto">
         <img class="img-fluid" src="img/Team/Clement.jpg" alt="">
@@ -211,67 +253,6 @@
   </div>
 </section>
 
-<!--&lt;!&ndash; Contact Section &ndash;&gt;-->
-<!--<section class="page-section" id="contact">-->
-<!--  <div class="container">-->
-
-<!--    &lt;!&ndash; Contact Section Heading &ndash;&gt;-->
-<!--    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>-->
-
-<!--    &lt;!&ndash; Icon Divider &ndash;&gt;-->
-<!--    <div class="divider-custom">-->
-<!--      <div class="divider-custom-line"></div>-->
-<!--      <div class="divider-custom-icon">-->
-<!--        <i class="fa fa-star"></i>-->
-<!--      </div>-->
-<!--      <div class="divider-custom-line"></div>-->
-<!--    </div>-->
-
-<!--    &lt;!&ndash; Contact Section Form &ndash;&gt;-->
-<!--    <div class="row">-->
-<!--      <div class="col-lg-8 mx-auto">-->
-<!--        &lt;!&ndash; To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. &ndash;&gt;-->
-<!--        <form name="sentMessage" id="contactForm" novalidate="novalidate">-->
-<!--          <div class="control-group">-->
-<!--            <div class="form-group floating-label-form-group controls mb-0 pb-2">-->
-<!--              <label>Name</label>-->
-<!--              <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">-->
-<!--              <p class="help-block text-danger"></p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="control-group">-->
-<!--            <div class="form-group floating-label-form-group controls mb-0 pb-2">-->
-<!--              <label>Email Address</label>-->
-<!--              <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">-->
-<!--              <p class="help-block text-danger"></p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="control-group">-->
-<!--            <div class="form-group floating-label-form-group controls mb-0 pb-2">-->
-<!--              <label>Phone Number</label>-->
-<!--              <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number.">-->
-<!--              <p class="help-block text-danger"></p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="control-group">-->
-<!--            <div class="form-group floating-label-form-group controls mb-0 pb-2">-->
-<!--              <label>Message</label>-->
-<!--              <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>-->
-<!--              <p class="help-block text-danger"></p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <br>-->
-<!--          <div id="success"></div>-->
-<!--          <div class="form-group">-->
-<!--            <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Send</button>-->
-<!--          </div>-->
-<!--        </form>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--  </div>-->
-<!--</section>-->
-
 <!-- Footer -->
 <footer class="footer text-center">
   <div class="container">
@@ -279,11 +260,12 @@
 
       <!-- Footer Location -->
       <div class="col-lg-4 mb-5 mb-lg-0">
-        <img class="img-fluid usmb" src="img/usmb.png" alt="">
+          <a href="https://www.univ-smb.fr/"><img class="img-fluid usmb" src="img/usmb.png" alt="usmb_logo"></a>
       </div>
 
       <!-- Footer Social Icons -->
       <div class="col-lg-4 mb-5 mb-lg-0">
+          <a href="https://www.nuitdelinfo.com/"><img class="img-fluid usmb" src="img/nuit_info.jpg" alt="nuit_info_logo" width="148px"></a>
       </div>
 
       <!-- Footer About Text -->
@@ -338,8 +320,93 @@
               <!-- Portfolio Modal - Image -->
               <img class="img-fluid rounded mb-5" src="img/portfolio/chatbot.png" alt="">
               <!-- Portfolio Modal - Text -->
-              <p class="mb-5"> Explication de ce qu'on a fait </p>
+              <p>Lien du défi <a href="https://www.nuitdelinfo.com/inscription/defis/60">ici</a> !</p>
+              <p class="mb-5">Nous avons traité ce défi avec celui nommé "Intelligence Artificielle", les explications pour ces deux défis sont donc exactement les mêmes.</p>
+<p class="mb-5">La partie IA sera présenté dans cette section. Il vous est recommandé d’avoir lue les explication concernant l’objectif général du projet afin de comprendre aux mieux le choix fait.
+                Dans un premier nous présenterons comment on été réaliser les chatbots dans le jeux.
+                Puis dans un second temps un chatbot très spéciale a été ajouté aux près du bot d'accueil.
+              </p>
+              <p class="mb-5">
+                Comme vous avez pue lire l’étudiant est amené à rencontrer différent PNJ (personnage non joueur) qui en réalité sont des bot tousse différent. L’objectif est que les entreprise tel que le Crous, CAF, Les universités mette à disposition des outils du type chatbot pour automatiser aux plusse les démarche longue est difficile. Mais la question est comment leur apporter une méthode haut niveaux pour réaliser un chatbot. Pour se faire nous avons utilisé la librairie RASA. Il s'agit d’un projet open-source python pour réaliser des chatbot de type domain fermer. La construction d’un bot avec Rasa est très similaire a celle de dialogflow. Cette librairie combine plusieur technique différente de machine learning. Par exemple du deep learning pour la prédiction des actions a faire en fonction de l’intention détecter
+                On retrouve 2 notion importante les intentions (ce que souhaite faire l’utilisateur) les entitée (les informations a extraire dans le text taper par l’utilisateur).
+                Les avantages de cette librairie est la faciliter pour réaliser un chatbot.
+            </p>
+              <p class="mb-5">
+                L'inconvénient de Rasa c'est qu’il s'agit d’un bot du type domain fermer. Il faut donc créer des scénarios. Ajouter des phrases pour qu'une intention soit bien détecté, etc.
+            </p>
+              <p class="mb-5">
+                Pourquoi le choix de Rasa est qu’il s'agit d’un librairie open-source est celui-ci n’est pas hébergé auprès de grand entreprise qui pourrait récolter certaine donnée sensible.
+            </p>
+              <p class="mb-5">
+                Pour l’avenir de ce projet chatbot. On peut imaginer de créer une interface plus haut niveaux afin de permettre a n’importe qui de développer son chatbot pour le jeux. Ou encore aider la génération de phrase est détection d'entités afin de rendre la démarche de création moins difficile.
+                L’objectif du chatbot info est de attribuer des quêtes à l’étudiant en fonction de ça question. Pour une question de temps que une seul quête a été implémenté la recherche d’un logement aux crous.
+                L’or ce que vous aller communiquer avec celui-ci vous aller donner votre nom prénom, email. Afin que tout les autre bot vous connaisse. Puis si vous luis poser une question du type need a room. Il vous donneras  la quête pour trouver un logement aux crous.
+            </p>
+              <p class="mb-5">
+                Mais ce Bot est très spécial il est doté d’un second réseau de neurone qui peut mener une conversation diverse aux lieu de demander un logement aux crous vous pouvez luis dire des phrase du type “I love pasta and you?”. Une explication sera donnée dans la second partie.</p>
+            </p>
+            <p class="mb-5">Nous allons vous présenter comment fût réalisé le chatbot du type domaine ouvert. L’objectif est d'utiliser le nouveau modèle entrainé par OpenAi GPT2 afin d’appliquer un transfer learning sur notre modèle open bot.  Nous nous sommes aidés de <a href="https://github.com/huggingface/transfer-learning-conv-ai">ce projet</a>.</p>
+Nous l’avons intégré avec le chat bot info. L’idée ici est de montrer la possibilité de rajouter un autre réseau de neurone sur un chatbot rasa. Ce qui permet d'illustrer la possibilité de rendre un bot beaucoup plus intelligent en combinant simplement différentes architectures de deep learning.
+Voici une vidéo du open bot :</p>
             </div>
+            <div class="row justify-content-center">
+              <video controls width="95%" style="display: block">
+                <source src="videos/open_bot.mp4" type="video/webm">
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+            </div>
+            <br>
+            <br>
+            <p class="mb-5">
+                Les deux dernières vidéos montrent les deux chatbots s'exécuter en individuel (crous, info). Afin de montrer leur comportement. Car nous avons eu quelque problème de communication avec le jeux est le serveur ce qui cause une défaillance dans le fonctionnement de la conversation dans le jeux.
+            </p>
+            <p class="mb-5">
+                Comme vous pouvez voire dans la première vidéo l’étudiant n’est pas connus du système donc le bot info luis demande un minimum d’information pour que les autres chatbots puisse fonctionner.
+                Avec le deuxième vidéo que le bot crous est capable de reconnaître l’utilisateur.
+            </p>
+            <p class="mb-5">
+                L’idée recherché est de centraliser les information de l’étudiant aux prêt de tout les organisme (Crous, CAF, etc)
+            </p>
+            <p class="mb-5">
+                Note: les /start  /crous_get_files, sont des commande exécuter par le jeux mais pour la démonstration manuel nous devons les exécuter.
+            </p>
+            <div class="row justify-content-center">
+              <video controls width="95%" style="display: block">
+                <source src="videos/info_bot.mp4" type="video/webm">
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+            </div>
+            <div class="row justify-content-center">
+              <video controls width="95%" style="display: block">
+                <source src="videos/crous_bot.mp4" type="video/webm">
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+            </div>
+              <br>
+                              <p class="mb-5">Pour l’architecture internet ChatBot nous avons 2 instances RASA qui sont éxecuter.
+                                  Celui pour le bot Crous celui pour le bot info. Puis notre bot open-bot (domaine ouvert) qui communique avec le bot info.
+Pour faciliter l’extraction des mail est déchiffré nous avons ajouté un server Duckling. Lorsque l’étudiant entre un texte.
+                                  Rasa l’envoie a Duckling pour extraire les potentielles entités.
+Le tout peut être accessible à l’aide de notre api publique.
+    </p>
+                <p>
+                    Pour communiquer avec le bot info. Il faut faire une requête post à <a href="http://mlg.swan-blanc.fr/api/get_message">cette addresse </a>.
+
+</p>                    <p>
+Avec ce type de contenu json:
+{"user_id": "toto", "message": "hi", "bot_id": "5005"}
+                </p>
+                <p>
+Si vous voulez amorcer la conversation avec un bot il faut entrer "/start"
+</p>
+                <p>
+Pour le bot crous:
+                </p>
+{"user_id": "toto", "message": "hi", "bot_id": "5006"}
+<p>
+Tout est dit ! Merci pour vos défis !
+                </p>
+                          <img src="img/archi_rasa.jpg"/>
           </div>
         </div>
       </div>
@@ -359,7 +426,7 @@
       <div class="modal-body text-center">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-lg-8">
+            <p class="col-lg-8">
               <!-- Portfolio Modal - Title -->
               <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Défi "Mettez de l'intelligence dans votre moteur"</h2>
               <!-- Icon Divider -->
@@ -371,10 +438,95 @@
                 <div class="divider-custom-line"></div>
               </div>
               <!-- Portfolio Modal - Image -->
-              <img class="img-fluid rounded mb-5" src="img/portfolio/IA.png" alt="">
+              <img class="img-fluid rounded mb-5" src="img/portfolio/IA.png" alt="ia"/>
               <!-- Portfolio Modal - Text -->
-              <p class="mb-5">Explications sur notre IA</p>
+              <p class="mb-5">Lien du défi <a href="https://www.nuitdelinfo.com/inscription/defis/60">ici</a> !</p>
+              <p class="mb-5">Nous avons traité ce défi avec celui nommé "ProgBot", les explications pour ces deux défis sont donc exactement les mêmes.</p>
+
+              <p class="mb-5">La partie IA sera présenté dans cette section. Il vous est recommandé d’avoir lue les explication concernant l’objectif général du projet afin de comprendre aux mieux le choix fait.
+                Dans un premier nous présenterons comment on été réaliser les chatbots dans le jeux.
+                Puis dans un second temps un chatbot très spéciale a été ajouté aux près du bot d'accueil.
+              </p>
+              <p class="mb-5">
+                Comme vous avez pue lire l’étudiant est amené à rencontrer différent PNJ (personnage non joueur) qui en réalité sont des bot tousse différent. L’objectif est que les entreprise tel que le Crous, CAF, Les universités mette à disposition des outils du type chatbot pour automatiser aux plusse les démarche longue est difficile. Mais la question est comment leur apporter une méthode haut niveaux pour réaliser un chatbot. Pour se faire nous avons utilisé la librairie RASA. Il s'agit d’un projet open-source python pour réaliser des chatbot de type domain fermer. La construction d’un bot avec Rasa est très similaire a celle de dialogflow. Cette librairie combine plusieur technique différente de machine learning. Par exemple du deep learning pour la prédiction des actions a faire en fonction de l’intention détecter
+                On retrouve 2 notion importante les intentions (ce que souhaite faire l’utilisateur) les entitée (les informations a extraire dans le text taper par l’utilisateur).
+                Les avantages de cette librairie est la faciliter pour réaliser un chatbot.
+            </p>
+              <p class="mb-5">
+                L'inconvénient de Rasa c'est qu’il s'agit d’un bot du type domain fermer. Il faut donc créer des scénarios. Ajouter des phrases pour qu'une intention soit bien détecté, etc.
+            </p>
+              <p class="mb-5">
+                Pourquoi le choix de Rasa est qu’il s'agit d’un librairie open-source est celui-ci n’est pas hébergé auprès de grand entreprise qui pourrait récolter certaine donnée sensible.
+            </p>
+              <p class="mb-5">
+                Pour l’avenir de ce projet chatbot. On peut imaginer de créer une interface plus haut niveaux afin de permettre a n’importe qui de développer son chatbot pour le jeux. Ou encore aider la génération de phrase est détection d'entités afin de rendre la démarche de création moins difficile.
+                L’objectif du chatbot info est de attribuer des quêtes à l’étudiant en fonction de ça question. Pour une question de temps que une seul quête a été implémenté la recherche d’un logement aux crous.
+                L’or ce que vous aller communiquer avec celui-ci vous aller donner votre nom prénom, email. Afin que tout les autre bot vous connaisse. Puis si vous luis poser une question du type need a room. Il vous donneras  la quête pour trouver un logement aux crous.
+            </p>
+              <p class="mb-5">
+                Mais ce Bot est très spécial il est doté d’un second réseau de neurone qui peut mener une conversation diverse aux lieu de demander un logement aux crous vous pouvez luis dire des phrase du type “I love pasta and you?”. Une explication sera donnée dans la second partie.</p>
+            </p>
+            <p class="mb-5">Nous allons vous présenter comment fût réalisé le chatbot du type domaine ouvert. L’objectif est d'utiliser le nouveau modèle entrainé par OpenAi GPT2 afin d’appliquer un transfer learning sur notre modèle open bot.  Nous nous sommes aidés de <a href="https://github.com/huggingface/transfer-learning-conv-ai">ce projet</a>.</p>
+Nous l’avons intégré avec le chat bot info. L’idée ici est de montrer la possibilité de rajouter un autre réseau de neurone sur un chatbot rasa. Ce qui permet d'illustrer la possibilité de rendre un bot beaucoup plus intelligent en combinant simplement différentes architectures de deep learning.
+Voici une vidéo du open bot :</p>
             </div>
+            <div class="row justify-content-center">
+              <video controls width="95%" style="display: block">
+                <source src="videos/open_bot.mp4" type="video/webm">
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+            </div>
+            <br>
+            <br>
+            <p class="mb-5">
+                Les deux dernières vidéos montrent les deux chatbots s'exécuter en individuel (crous, info). Afin de montrer leur comportement. Car nous avons eu quelque problème de communication avec le jeux est le serveur ce qui cause une défaillance dans le fonctionnement de la conversation dans le jeux.
+            </p>
+            <p class="mb-5">
+                Comme vous pouvez voire dans la première vidéo l’étudiant n’est pas connus du système donc le bot info luis demande un minimum d’information pour que les autres chatbots puisse fonctionner.
+                Avec le deuxième vidéo que le bot crous est capable de reconnaître l’utilisateur.
+            </p>
+            <p class="mb-5">
+                L’idée recherché est de centraliser les information de l’étudiant aux prêt de tout les organisme (Crous, CAF, etc)
+            </p>
+            <p class="mb-5">
+                Note: les /start  /crous_get_files, sont des commande exécuter par le jeux mais pour la démonstration manuel nous devons les exécuter.
+            </p>
+            <div class="row justify-content-center">
+              <video controls width="95%" style="display: block">
+                <source src="videos/info_bot.mp4" type="video/webm">
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+            </div>
+            <div class="row justify-content-center">
+              <video controls width="95%" style="display: block">
+                <source src="videos/crous_bot.mp4" type="video/webm">
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+                            </div>
+                                          <p class="mb-5">Pour l’architecture internet ChatBot nous avons 2 instances RASA qui sont éxecuter.
+                                  Celui pour le bot Crous celui pour le bot info. Puis notre bot open-bot (domaine ouvert) qui communique avec le bot info.
+Pour faciliter l’extraction des mail est déchiffré nous avons ajouté un server Duckling. Lorsque l’étudiant entre un texte.
+                                  Rasa l’envoie a Duckling pour extraire les potentielles entités.
+Le tout peut être accessible à l’aide de notre api publique.
+    </p>
+                <p>
+                    Pour communiquer avec le bot info. Il faut faire une requête post à <a href="http://mlg.swan-blanc.fr/api/get_message">cette addresse </a>.
+
+</p>                    <p>
+Avec ce type de contenu json:
+{"user_id": "toto", "message": "hi", "bot_id": "5005"}
+                </p>
+                <p>
+Si vous voulez amorcer la conversation avec un bot il faut entrer "/start"
+</p>
+                <p>
+Pour le bot crous:
+                </p>
+{"user_id": "toto", "message": "hi", "bot_id": "5006"}
+<p>
+Tout est dit ! Merci pour vos défis !
+                </p>
+            <img src="img/archi_rasa.jpg"/>
           </div>
         </div>
       </div>
@@ -408,13 +560,46 @@
               <!-- Portfolio Modal - Image -->
               <img class="img-fluid rounded mb-5" src="img/portfolio/game.png" alt="">
               <!-- Portfolio Modal - Text -->
-              <p class="mb-5">On a fait un meuporgue</p>
-              <!-- About Section Button -->
+              <p>Lien du défi <a href="https://www.nuitdelinfo.com/inscription/defis/239">ici</a> !</p>
+              <p>Lien des sources du jeu <a href="https://github.com/Laptite73/NuitInfo2019">ici</a> !</p>
+                              <!-- About Section Button -->
               <div class="text-center mt-4">
-                <a class="btn btn-xl btn-outline-dark" href="https://startbootstrap.com/themes/freelancer/">
+                <a class="btn btn-xl btn-outline-dark" href="RPG_NuitInfo2019.zip">
                   <i class="fa fa-download mr-2"></i>
-                  DownloadGame !
+                  Téléchargez le jeu ici !
                 </a>
+                  <br>
+                  <br>
+              <p class="mb-5">
+                  Ce serious game a pour but de sensibiliser l'étudiant à l'éventail des
+                  démarches administratives et des aides qui lui sont disponibles. </p>
+              <p class="mb-5">
+                  Projeté dans un univers en 2 dimensions, le joueur va devoir parcourir le monde en quête d'informations
+                  sur ses démarches étudiantes. Tout au long de son périple, il va parler à différents
+                  personnages afin d'atteindre ses objectifs. Chaque personnage détient des informations particulières
+                  et possède une personnalité propre, développée grâce aux dernières techniques d'intelligence
+                  artificielle sur les chatbots.
+              </p>
+              <p class="mb-5">
+                  Pour développer ce jeu, nous avons utilisé le moteur de jeu vidéo Unity dans le but
+                  d'effectuer un prototype rapide de notre application.
+                  Celui-ci va communiquer en JSON aux chatbots via une api rest developpée en flask.
+                  L'api est chargée de répondre aux requêtes de l'utilisateur, sachant que à chaque png correspond un chatbot.
+                  Chaque chatbot se présente sous la forme d'un micro-service.
+              </p>
+              <p class="mb-5">
+                Dans un avenir proche, le jeu se verra doté de nouvelles fonctionnalités,
+                  comme par exemple l'ajout d'une dimension communautaire et multijoueurs avec des espaces d'échanges, de commentaires, etc...
+                  Des liens avec les organisations réelles permettront aux joueurs d'effectuer directement leurs démarches à partir du jeu.
+                  Enfin, on peut imaginer l'ajout d'options d'accessibilité via des contrôles vocaux, ou encore via les graphismes adaptés pour le jeu.
+              </p>
+                Petite démontration du jeu (disponible sur windows uniquement):
+                <div class="row justify-content-center">
+              <video controls width="95%" style="display: block">
+                <source src="videos/RPG_nuit_info.mp4" type="video/webm">
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+            </div>
               </div>
             </div>
           </div>
@@ -450,7 +635,8 @@
               <!-- Portfolio Modal - Image -->
               <img class="img-fluid rounded mb-5" src="img/portfolio/selfie.png" alt="">
               <!-- Portfolio Modal - Text -->
-              <p class="mb-5"> work in progress :D </p>
+              <p class="mb-5">Lien du défi <a href="https://www.nuitdelinfo.com/inscription/defis/258">ici</a> !</p>
+              <p class="mb-5"> Et ben en fait, il faut être en https pour accéder à la webcam... Work in progress :D </p>
             </div>
           </div>
         </div>

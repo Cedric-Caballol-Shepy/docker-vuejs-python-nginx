@@ -27,8 +27,6 @@ def get_message():
     # get params from the POST request
     # try
     print("zeeeeeeeeeeeeeee", request.data.decode())
-    with open("temp.txt", "w") as f:
-        f.write(request.data.decode())
     user_id = request.json['user_id']
     bot_id = request.json['bot_id']  # ex: 5005
     message = request.json['message']
@@ -36,16 +34,18 @@ def get_message():
     bot_url = "http://localhost:" + str(bot_id) + "/webhooks/rest/webhook"
     params = {"sender": user_id, "message": message}
     result = http_json_request(params, bot_url)
-    new_msg = []
+    new_msg = ""
     pile_run = deepcopy(result)
     while len(pile_run) > 0:
         msg = pile_run.pop(0)
         if "buttons" in msg:
             params["message"] = msg["buttons"][0]["payload"]
             pile_run.extend(http_json_request(params, bot_url))
+        elif "custom" in msg:
+            message += "<{}>\n".format(msg["custom"]["type"])
         else:
-            new_msg.append(msg)
-    return jsonify(new_msg)
+            new_msg += "{}\n".format(msg["text"])
+    return new_msg
     # except Exception as err:
     #     print("Erreur dans get_message() :", err)
     #     return "Error"

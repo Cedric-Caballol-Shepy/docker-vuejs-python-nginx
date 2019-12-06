@@ -1,0 +1,10 @@
+USE sample_db;
+CREATE TABLE utilisateur_jeu(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT
+);
+
+CREATE TABLE utilisateur(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    mail VARCHAR(256),
+    pass VARCHAR(256)
+);
